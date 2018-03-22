@@ -10,13 +10,16 @@
 
     <div v-if="movie">
       <div class="movie__header">
-        <img v-if="movie.posterUrl" v-bind:src="movie.posterUrl + '?w=240'" />
+        <img v-if="movie.posterUrl" v-bind:src="movie.posterUrl + '?w=140'" />
         {{movie.releaseDate.substr(0, 4)}}
         <h1>
           {{movie.title}}
         </h1>
       </div>
       <h2>Overview</h2>
+      <p>
+        https://laracasts.com/discuss/channels/vue/vue-template-based-on-data-property
+      </p>
       <div v-for="txt in movie.overview" :key="txt._key">
         <Block :block="txt" />
       </div>
@@ -122,8 +125,8 @@ export default {
 
 .movie__header > img {
   display: block;
-  width: 33vw;
-  max-width: 20rem;
+  /* width: 33vw; */
+  max-width: 100%;
   height: auto;
   float: left;
   margin-right: 0.5rem;
